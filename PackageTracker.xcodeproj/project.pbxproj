@@ -58,17 +58,13 @@
 		0B8867D523F1A41A00CC8F04 /* PackageTracker */ = {
 			isa = PBXGroup;
 			children = (
+				0B8867D623F1A41A00CC8F04 /* AppDelegate.swift */,
+				0B8867D823F1A41A00CC8F04 /* SceneDelegate.swift */,
 				0B8867EE23F1A46800CC8F04 /* Model */,
 				0B8867EF23F1A47A00CC8F04 /* View */,
 				0B8867ED23F1A45900CC8F04 /* Controller */,
-				0B8867D623F1A41A00CC8F04 /* AppDelegate.swift */,
-				0B8867D823F1A41A00CC8F04 /* SceneDelegate.swift */,
-				0B8867DA23F1A41A00CC8F04 /* ViewController.swift */,
-				0B8867DC23F1A41A00CC8F04 /* Main.storyboard */,
-				0B8867E223F1A41D00CC8F04 /* Assets.xcassets */,
-				0B8867E423F1A41D00CC8F04 /* LaunchScreen.storyboard */,
+				0B938205241A555E008CD132 /* Assets */,
 				0B8867E723F1A41D00CC8F04 /* Info.plist */,
-				0B8867DF23F1A41A00CC8F04 /* PackageTracker.xcdatamodeld */,
 			);
 			path = PackageTracker;
 			sourceTree = "<group>";
@@ -76,6 +72,7 @@
 		0B8867ED23F1A45900CC8F04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0B8867DA23F1A41A00CC8F04 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -83,6 +80,7 @@
 		0B8867EE23F1A46800CC8F04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B8867DF23F1A41A00CC8F04 /* PackageTracker.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,6 +90,16 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0B938205241A555E008CD132 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0B8867DC23F1A41A00CC8F04 /* Main.storyboard */,
+				0B8867E223F1A41D00CC8F04 /* Assets.xcassets */,
+				0B8867E423F1A41D00CC8F04 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
