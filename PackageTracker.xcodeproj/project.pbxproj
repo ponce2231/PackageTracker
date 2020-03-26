@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		0B8867D923F1A41A00CC8F04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8867D823F1A41A00CC8F04 /* SceneDelegate.swift */; };
 		0B8867DB23F1A41A00CC8F04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8867DA23F1A41A00CC8F04 /* ViewController.swift */; };
 		0B8867DE23F1A41A00CC8F04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8867DC23F1A41A00CC8F04 /* Main.storyboard */; };
-		0B8867E123F1A41A00CC8F04 /* PackageTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B8867DF23F1A41A00CC8F04 /* PackageTracker.xcdatamodeld */; };
 		0B8867E323F1A41D00CC8F04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8867E223F1A41D00CC8F04 /* Assets.xcassets */; };
 		0B8867E623F1A41D00CC8F04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8867E423F1A41D00CC8F04 /* LaunchScreen.storyboard */; };
 		340A4EBE13973605E8E7AD30 /* Pods_PackageTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E22038D3CCD116A0C36585 /* Pods_PackageTracker.framework */; };
@@ -23,7 +22,6 @@
 		0B8867D823F1A41A00CC8F04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0B8867DA23F1A41A00CC8F04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B8867DD23F1A41A00CC8F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0B8867E023F1A41A00CC8F04 /* PackageTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PackageTracker.xcdatamodel; sourceTree = "<group>"; };
 		0B8867E223F1A41D00CC8F04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B8867E523F1A41D00CC8F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B8867E723F1A41D00CC8F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 		0B8867EE23F1A46800CC8F04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0B8867DF23F1A41A00CC8F04 /* PackageTracker.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,7 +120,6 @@
 				F807D49CF658B0631B74AA75 /* Pods-PackageTracker.debug.xcconfig */,
 				D492300CD990C6A1D910EF41 /* Pods-PackageTracker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -245,7 +241,6 @@
 				0B8867DB23F1A41A00CC8F04 /* ViewController.swift in Sources */,
 				0B8867D723F1A41A00CC8F04 /* AppDelegate.swift in Sources */,
 				0B8867D923F1A41A00CC8F04 /* SceneDelegate.swift in Sources */,
-				0B8867E123F1A41A00CC8F04 /* PackageTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,19 +440,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0B8867DF23F1A41A00CC8F04 /* PackageTracker.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0B8867E023F1A41A00CC8F04 /* PackageTracker.xcdatamodel */,
-			);
-			currentVersion = 0B8867E023F1A41A00CC8F04 /* PackageTracker.xcdatamodel */;
-			path = PackageTracker.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0B8867CB23F1A41A00CC8F04 /* Project object */;
 }
