@@ -8,5 +8,4 @@ target 'PackageTracker' do
   # Pods for PackageTracker
 pod 'XMLParsing', :git => 'https://github.com/ShawnMoore/XMLParsing.git'
 pod 'RealmSwift'
-pod "Alamofire" , '~> 5.0'
 end
