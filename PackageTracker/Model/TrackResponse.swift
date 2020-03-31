@@ -1,5 +1,5 @@
  //
-//  Status.swift
+//  TrackResponse.swift
 //  PackageTracker
 //
 //  Created by Christopher Ponce Mendez on 3/29/20.
@@ -8,11 +8,12 @@
 
 import Foundation
 import RealmSwift
+import XMLParsing
  
  class TrackResponse: Object, Codable {
     
-    @objc dynamic var TrackInfo = ""
-    @objc dynamic  var TrackSummary = ""
-    @objc dynamic  var TrackDetail = ""
+    @objc dynamic var TrackInfo: String?
+    @objc dynamic  var TrackSummary: String?
+    @objc dynamic  var TrackDetail: String?
 
  }
