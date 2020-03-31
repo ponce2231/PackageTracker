@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Package {
-    let packageName: String
-    let packageNumber: String
+class Package: Object {
+    
+    @objc dynamic var packageName = ""
+    @objc dynamic var packageNumber = ""
+    
+    @objc dynamic var trackResponse: TrackResponse!
 }

@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
  
- struct TrackResponse: Codable {
-    let TrackInfo: String
-    let TrackSummary: String
-    let TrackDetail: String
+ class TrackResponse: Object, Codable {
     
+    @objc dynamic var TrackInfo = ""
+    @objc dynamic  var TrackSummary = ""
+    @objc dynamic  var TrackDetail = ""
+
  }
