@@ -12,19 +12,19 @@ import Alamofire
 
 class CarrierClient {
     //MARK: USPS apikey
-    static let apiKeyUsps = "806NONE06853"
+    static let apiKeyUsps = "094NONE07049"
     
     enum EndPoints {
         //MARK: USPS EndPoint
         static let baseUsps = "http://production.shippingapis.com/ShippingAPI.dll?API=TrackV2"
         static let uspsApiKeyParam = "&XML=<TrackRequest USERID=\(CarrierClient.apiKeyUsps)>"
-      
+        
         case usps(String)
         
         
         var urlValue:String {
             switch self {
-            case .usps(let trackID): return EndPoints.baseUsps + EndPoints.uspsApiKeyParam + "<TrackID ID=\(trackID)></TrackID></TrackRequest>"
+            case .usps(let trackID): return EndPoints.baseUsps + EndPoints.uspsApiKeyParam + "<TrackID ID=" + trackID + "></TrackID></TrackRequest>"
             }
         }
         var url: URL{
@@ -32,28 +32,60 @@ class CarrierClient {
         }
     }
     
-    class func uspsTracker(packageID: String){
-//        9400111899561757463961
-        let uspsURL = "http://production.shippingapis.com/ShippingAPI.dll?API=TrackV2&XML=<TrackRequest USERID=\(apiKeyUsps)><TrackID ID=\(packageID)></TrackID></TrackRequest>"
+    class func uspsTracker(packageID: String, completionHandler: @escaping (Bool,Error?) -> Void){
+        //        9400111899561757463961
+//        let uspsURL = "http://production.shippingapis.com/ShippingAPI.dll?API=TrackV2&XML=<TrackRequest USERID=" + apiKeyUsps + "><TrackID ID=" + packageID + "></TrackID></TrackRequest>"
         
-        guard let data = uspsURL.data(using: .utf8)else{
-            print("there was an error")
-            return
+        var request = URLRequest(url: EndPoints.usps(packageID).url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else{
+                
+                print(error?.localizedDescription)
+                completionHandler(false, error)
+                return
+            }
+//            guard let data = request.data(using: .utf8)else{
+//                print(error?.localizedDescription)
+//                return
+//            }
+            
+            do{
+                let decoder = XMLDecoder()
+                let trackResponse = try decoder.decode(TrackResponse.self, from: data)
+                
+                let encoder = XMLEncoder()
+                let returnData = try encoder.encode(trackResponse, withRootKey: "TrackResponse")
+                print(returnData)
+                completionHandler(true, nil)
+            }catch{
+                print(error.localizedDescription)
+            }
         }
+        dataTask.resume()
         
-        let decoder = XMLDecoder()
         
-        let trackObject = try? decoder.decode(TrackResponse.self, from: data)
         
-        let returnData = try? XMLEncoder().encode(trackObject, withRootKey: "TrackResponse")
-        if returnData != nil {
-            print(returnData)
-        }else{
-            print(returnData, "bananas")
-        }
-        
-    
+        //        let decoder = XMLDecoder()
+        //
+        //        let trackObject = try? decoder.decode(TrackResponse.self, from: data)
+        //
+        //        let returnData = try? XMLEncoder().encode(trackObject, withRootKey: "TrackResponse")
+        //        if returnData != nil {
+        //            print(returnData)
+        //        }else{
+        //            print(returnData, "bananas")
+        //        }
+        //        AF.request(try! uspsURL.asURL()).response{ response in
+        //
+        //            print(response)
+        //
+        //
+        //        }
         
     }
     
 }
+

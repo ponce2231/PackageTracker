@@ -14,6 +14,6 @@ class Package: Object {
     @objc dynamic var packageName = ""
     @objc dynamic var packageNumber = ""
     
-    @objc dynamic var trackResponse: TrackResponse!
+//    @objc dynamic var trackResponse: TrackResponse!
 }
 

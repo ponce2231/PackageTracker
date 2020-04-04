@@ -14,10 +14,16 @@ class CarrierVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        CarrierClient.uspsTracker(packageID: "9400111899561757463961")
-          print(Realm.Configuration.defaultConfiguration.fileURL!)
+        CarrierClient.uspsTracker(packageID: "9400111899561757463961", completionHandler:uspsHandler(succes:error:))
+//          print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 
-
+    func uspsHandler(succes: Bool, error: Error?) {
+        if succes{
+            print("bananas")
+        } else{
+            print(error?.localizedDescription)
+        }
+    }
 }
 

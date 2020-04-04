@@ -10,10 +10,15 @@ import Foundation
 import RealmSwift
 import XMLParsing
  
- class TrackResponse: Object, Codable {
+ struct TrackResponse: Codable {
     
-    @objc dynamic var TrackInfo: String?
-    @objc dynamic  var TrackSummary: String?
-    @objc dynamic  var TrackDetail: String?
+//    @objc dynamic var TrackInfo: String?
+    var Id: String
+    var TrackSummary: String
+    var TrackDetail: String
 
+    enum CodingKeys: String, CodingKey {
+        case Id = "ID"
+        case TrackSummary, TrackDetail
+    }
  }

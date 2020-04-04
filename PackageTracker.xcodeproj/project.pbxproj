@@ -100,9 +100,9 @@
 		0B8867EE23F1A46800CC8F04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0BA97A76242C5D7400312344 /* Networking */,
 				0BAC7BC2243113B800896184 /* TrackResponse.swift */,
 				1E56CC662432C44300460CCC /* Package.swift */,
+				0BA97A76242C5D7400312344 /* Networking */,
 			);
 			path = Model;
 			sourceTree = "<group>";
