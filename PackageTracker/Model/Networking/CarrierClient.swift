@@ -17,25 +17,24 @@ class CarrierClient {
     enum EndPoints {
         //MARK: USPS EndPoint
         static let baseUsps = "http://production.shippingapis.com/ShippingAPI.dll?API=TrackV2"
-        static let uspsApiKeyParam = "&XML=<TrackRequest USERID=\(CarrierClient.apiKeyUsps)>"
+        static let uspsApiKeyParam = "&XML=<TrackRequest USERID=\"\(CarrierClient.apiKeyUsps)\">"
         
         case usps(String)
         
         
         var urlValue:String {
             switch self {
-            case .usps(let trackID): return EndPoints.baseUsps + EndPoints.uspsApiKeyParam + "<TrackID ID=" + trackID + "></TrackID></TrackRequest>"
+            case .usps(let trackID): return EndPoints.baseUsps + EndPoints.uspsApiKeyParam + "<TrackID ID=\"\(trackID)\"></TrackID></TrackRequest>"
             }
         }
         var url: URL{
+            print(urlValue)
             return URL(string: urlValue)!
         }
     }
     
     class func uspsTracker(packageID: String, completionHandler: @escaping (Bool,Error?) -> Void){
         //        9400111899561757463961
-//        let uspsURL = "http://production.shippingapis.com/ShippingAPI.dll?API=TrackV2&XML=<TrackRequest USERID=" + apiKeyUsps + "><TrackID ID=" + packageID + "></TrackID></TrackRequest>"
-        
         var request = URLRequest(url: EndPoints.usps(packageID).url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
